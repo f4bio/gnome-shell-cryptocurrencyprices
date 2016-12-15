@@ -1,1 +1,6 @@
-{"name": "Crypto Currency Prices", "uuid": "cryptocurrencyprices@f4bio.protonmail.com", "description": "Show various crypto currency prices", "shell-version": ["3.22.2"]}
+{
+  "name": "Crypto Currency Prices",
+  "uuid": "cryptocurrencyprices@f4bio.protonmail.com",
+  "description": "Show various crypto currency prices",
+  "shell-version": ["3.22.2"]
+}
