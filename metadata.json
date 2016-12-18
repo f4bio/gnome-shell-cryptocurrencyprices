@@ -2,5 +2,7 @@
   "name": "Crypto Currency Prices",
   "uuid": "cryptocurrencyprices@f4bio.protonmail.com",
   "description": "Show various crypto currency prices",
-  "shell-version": ["3.22.2"]
+  "shell-version": ["3.22.2"],
+  "settings-schema":  "org.gnome.shell.extensions.cryptocurrencyprices",
+  "gettext-domain": "gnome-shell-extensions"
 }

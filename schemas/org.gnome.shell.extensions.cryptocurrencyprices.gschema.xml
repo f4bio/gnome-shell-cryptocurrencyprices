@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="gnome-shell-extensions">
+  <schema id="org.gnome.shell.extensions.cryptocurrencyprices" path="/org/gnome/shell/extensions/cryptocurrencyprices/">
+    <key name="currency-ids" type="as">
+			<default>['bitcoin', 'ethereum']</default>
+		</key>
+    <key name="currency-labels" type="as">
+			<default>['Bitcoin', 'Ethereum']</default>
+		</key>
+    <key name="currency-enableds" type="as">
+			<default>['true', 'true']</default>
+		</key>
+  </schema>
+</schemalist>
