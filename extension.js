@@ -55,9 +55,9 @@ const CryptoCurrencyPricesIndicator = new Lang.Class({
 		this._enableds = this._settings.get_strv("currency-enableds");
 
 		for (let cnt = 0; cnt < this._ids.length; cnt++) {
-			if((this._enableds[cnt] === "false")) {
-				continue;
-			}
+			// if((this._enableds[cnt] === "false")) {
+			// 	continue;
+			// }
 			let message = Soup.form_request_new_from_hash(
 				"GET", COINMARKETCAP_API_URL.format(this._ids[cnt]), {});
 
@@ -72,21 +72,6 @@ const CryptoCurrencyPricesIndicator = new Lang.Class({
 					this._refreshUI(_json[0]);
 				}));
 		}
-		// // global.log(TAG + " ids to fetch: " + this._settings.get_strv("currency-ids"));
-		// this._settings.get_strv("currency-ids").forEach(function(id) {
-		// 	// global.log(TAG + " fetching from: " + COINMARKETCAP_API_URL.format(id));
-		// 	let message = Soup.form_request_new_from_hash("GET", COINMARKETCAP_API_URL.format(id), {});
-		// 	// execute the request and define the callback
-		// 	this._data[id] = _httpSession.queue_message(message, Lang.bind(this, function(_httpSession, message) {
-		// 		if (message.status_code !== 200) {
-		// 			return;
-		// 		}
-		// 		let _json = JSON.parse(message.response_body.data);
-		// 		// this._refreshUI(_json);
-		// 		global.log(TAG + " fetched: " + JSON.stringify(_json))
-		// 		return _json;
-		// 	}));
-		// });
 	},
 
 	_refreshUI: function(data) {
@@ -95,12 +80,6 @@ const CryptoCurrencyPricesIndicator = new Lang.Class({
 			this._text += " | "
 		}
 		this._text += TEXT_PATTERN.format(data["symbol"], Number(data["price_usd"]));
-		// for (let cnt = 0; cnt < CURRENCY_IDS.length; cnt++) {
-		// 	let _data = data.filter(function(el) {
-		// 		return el["id"] === CURRENCY_IDS[cnt];
-		// 	})[0];
-		// 	_text += (_data["symbol"] + ": " + Number(_data["price_usd"]).toFixed(2) + " ")
-		// }
 		this.buttonText.set_text(this._text);
 	},
 	_removeTimeout: function() {
